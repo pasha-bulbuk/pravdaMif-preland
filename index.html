@@ -77,10 +77,11 @@ h1{font-size: 30px;margin-top: 10px;font-weight: 900;}
             В поисках правды.
           </p>
           <p>
-            <a href="https://t.me/joinchat/AAAAAEqihIyfMxjIc5VUlw" class="btn btn-primary my-2" onclick="fbq('track', 'Lead');">
+            <a href="https://t.me/joinchat/AAAAAEqihIyfMxjIc5VUlw" class="btn btn-primary my-2" onclick="ga('send', 'event', 'join-button', 'click');">
               Открыть в Telegram
             </a>
-            <a id="dlink" href="https://telegram.org/" class="btn btn-secondary my-2" target="_blank" onclick="return true;">
+            <a id="dlink" href="https://telegram.org/" class="btn btn-secondary my-2" target="_blank" 
+            onclick="ga('send', 'event', 'open-button', 'click');">
               У меня нет Telegram
             </a>
           </p>
@@ -95,6 +96,17 @@ h1{font-size: 30px;margin-top: 10px;font-weight: 900;}
   if (user.os.family == "Android") {dlink = 'market://details?id=org.telegram.messenger'}
   document.getElementById("dlink").setAttribute("href", dlink);
 </script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-139781502-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
 <!-- Пиксель Facebook -->
     <script type="text/javascript">
         //var url = "tg:\/\/join?invite=";
